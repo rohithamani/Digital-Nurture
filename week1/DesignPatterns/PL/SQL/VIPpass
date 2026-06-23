@@ -1,0 +1,13 @@
+begin 
+for i in c.customers
+loop
+if i.balance>=10000 then 
+update customers
+set ISVIP='true'
+where customerid=i.customerid;
+dbms_output.put_line('VIP pass assigned to the customer'||i.customerid)
+end if;
+end loop;
+end;
+/
+
