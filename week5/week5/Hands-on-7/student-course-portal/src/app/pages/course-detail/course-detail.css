@@ -1,0 +1,41 @@
+.detail-container {
+  padding: 20px;
+}
+
+.detail-container a {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.detail-container a:hover {
+  text-decoration: underline;
+}
+
+.detail-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+}
+
+.detail-card h2 {
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.detail-card p {
+  margin: 8px 0;
+  font-size: 15px;
+  color: #444;
+}
+
+.not-found-box {
+  padding: 15px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+}

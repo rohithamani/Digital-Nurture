@@ -1,0 +1,16 @@
+.widget {
+  border: 1px solid #ccc;
+  padding: 12px;
+  border-radius: 5px;
+  background-color: #f0f8ff;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.widget h4 {
+  margin: 0 0 8px 0;
+}
+
+.widget p {
+  margin: 0;
+}

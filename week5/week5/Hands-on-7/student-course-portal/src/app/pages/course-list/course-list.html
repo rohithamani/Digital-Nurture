@@ -1,0 +1,17 @@
+<div class="course-list-container">
+  <h2>Course Listing</h2>
+
+  <div class="search-row">
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Search courses..." />
+    <button (click)="onSearch()">Search</button>
+  </div>
+
+  <p *ngIf="searchTerm" class="search-info">
+    Current URL Query Parameter (search): <strong>{{ searchTerm }}</strong>
+  </p>
+
+  <app-course-card
+    *ngFor="let course of courses"
+    [course]="course">
+  </app-course-card>
+</div>

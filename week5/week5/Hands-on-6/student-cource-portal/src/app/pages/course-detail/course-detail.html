@@ -1,0 +1,13 @@
+<div class="detail-container">
+  <a routerLink="/courses">Back to Courses</a>
+
+  <div *ngIf="course">
+    <h2>{{ course.name }}</h2>
+    <p>Code: {{ course.code }}</p>
+    <p>Credits: {{ course.credits }}</p>
+  </div>
+
+  <div *ngIf="!course">
+    <p>Course not found.</p>
+  </div>
+</div>

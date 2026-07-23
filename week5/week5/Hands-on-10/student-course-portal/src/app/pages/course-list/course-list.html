@@ -1,0 +1,41 @@
+<div class="course-list-container">
+  <h2>Course Listing (NgRx Store & Effects)</h2>
+
+  <!-- NgRx store loading state -->
+  <div *ngIf="(loading$ | async) || (loadingService.isLoading$ | async)" class="loading-spinner">
+    ⌛ Loading data via NgRx Store & Effects...
+  </div>
+
+  <!-- NgRx store error state -->
+  <div *ngIf="error$ | async as errorMsg" class="error-banner">
+    ⚠️ {{ errorMsg }}
+  </div>
+
+  <div class="search-row">
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Search courses..." />
+    <button (click)="onSearch()">Search</button>
+  </div>
+
+  <p *ngIf="searchTerm" class="search-info">
+    Current URL Query Parameter (search): <strong>{{ searchTerm }}</strong>
+  </p>
+
+  <div class="course-grid">
+    <!-- Step 96: Render course cards using courses$ | async pipe -->
+    <div *ngFor="let course of (courses$ | async)" class="course-wrapper">
+      <app-course-card [course]="course"></app-course-card>
+      <div class="card-actions">
+        <button (click)="selectCourseForStudents(course.id)">Load Students (switchMap)</button>
+        <button (click)="deleteCourse(course.id)" class="delete-btn">DELETE</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="selectedCourseId" class="switchmap-students-box">
+    <h3>Enrolled Students for Course ID {{ selectedCourseId }} (via switchMap):</h3>
+    <p *ngIf="selectedCourseStudents.length === 0">No students found for this course.</p>
+    <ul>
+      <li *ngFor="let s of selectedCourseStudents">{{ s.name }} (Student ID: {{ s.id }})</li>
+    </ul>
+  </div>
+</div>

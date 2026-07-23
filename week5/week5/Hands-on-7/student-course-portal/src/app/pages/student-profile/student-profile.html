@@ -1,0 +1,20 @@
+<div class="profile-container">
+  <h2>Student Profile</h2>
+  
+  <div class="auth-status-badge">
+    Auth Guard Status: <strong>{{ authService.isLoggedIn ? 'Logged In (Access Granted)' : 'Logged Out' }}</strong>
+  </div>
+
+  <p>Manage your personal profile details and enrolled courses.</p>
+
+  <h3>Enrolled Courses</h3>
+
+  <p *ngIf="enrolledList.length === 0" class="empty-msg">No courses enrolled yet. Go to Courses list to enroll!</p>
+
+  <div *ngFor="let course of enrolledList" class="enrolled-card">
+    <h4>{{ course.name }}</h4>
+    <p>Code: {{ course.code }}</p>
+    <p>Credits: {{ course.credits }}</p>
+    <p>Status: {{ course.gradeStatus }}</p>
+  </div>
+</div>

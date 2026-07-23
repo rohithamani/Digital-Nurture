@@ -1,0 +1,14 @@
+<div class="card">
+  <h3>{{ course.name }}</h3>
+  <p>Code: {{ course.code }}</p>
+  <p>Credits: {{ course.credits }}</p>
+  <p>Status: {{ course.gradeStatus }}</p>
+  <a [routerLink]="['/courses', course.id]">View Details</a>
+
+  <!-- Step 100: Async pipe on enrolledIds$ from NgRx store to toggle Enroll/Unenroll button -->
+  <ng-container *ngIf="(enrolledIds$ | async) as enrolledIds">
+    <button (click)="toggleEnroll(enrolledIds.includes(course.id))">
+      {{ enrolledIds.includes(course.id) ? 'Unenroll' : 'Enroll' }}
+    </button>
+  </ng-container>
+</div>

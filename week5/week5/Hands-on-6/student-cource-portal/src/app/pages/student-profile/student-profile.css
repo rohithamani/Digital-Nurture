@@ -1,0 +1,25 @@
+.profile-container {
+  padding: 20px;
+}
+
+h2, h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.enrolled-card {
+  border: 1px solid #ccc;
+  padding: 12px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  margin-bottom: 10px;
+}
+
+.enrolled-card h4 {
+  margin: 0 0 6px 0;
+}
+
+.enrolled-card p {
+  margin: 3px 0;
+  color: #555;
+}
